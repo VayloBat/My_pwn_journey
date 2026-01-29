@@ -30,5 +30,5 @@ Check it out here: [exploit.py](./exploitpwn102.py)
 ---
 
 ## 0x06: Result
-![PoC](./screenshot.png)
+![PoC](./screenshotpwn102.png)
 *Got the shell. Game over.*
