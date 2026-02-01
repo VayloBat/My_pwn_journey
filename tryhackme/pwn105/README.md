@@ -1,8 +1,5 @@
 
-
-
-
-\# THM - pwn105 Writeup (Bad Integers)
+# THM - pwn105 Writeup (Bad Integers)
 
 
 
@@ -10,7 +7,7 @@ pwn105 is a classic example of why data types and boundary checks matter. It’s
 
 
 
-\### The Logic
+### The Logic
 
 After reversing the binary in \*\*Ghidra\*\*, I noticed the `main` function asks for two numbers. It has a check to prevent you from entering negative numbers initially. 
 
@@ -20,13 +17,13 @@ However, the vulnerability lies in how it handles the result. The program adds t
 
 
 
-\### The Trick: Integer Overflow
+### The Trick: Integer Overflow
 
 Since the program treats the sum as a 32-bit signed integer, it has a maximum positive limit of `2,147,483,647`. In computer logic, if you add `1` to this maximum value, the number "wraps around" and becomes the lowest possible negative number.
 
 
 
-\### Execution
+### Execution
 
 I didn't need a complex payload. I just sent two values that would force this wrap-around:
 
@@ -39,14 +36,13 @@ I didn't need a complex payload. I just sent two values that would force this wr
 The sum overflowed, the program saw a negative result, and I got the shell.
 
 
-
-\### Lesson Learned
+### Lesson Learned
 
 Input validation isn't just about checking if a number is positive or negative; it's about ensuring that arithmetic operations stay within the safe bounds of the allocated data type.
 
 
 
-\### Exploit
+### Exploit
 
 Check out the full exploit script here: \[exploitpwn105.py](./exploitpwn105.py)
 
@@ -56,9 +52,10 @@ Check out the full exploit script here: \[exploitpwn105.py](./exploitpwn105.py)
 
 
 
-\### Result
+### Result
 
 !\[PoC](./screenshotpwn105.jpg)
+
 
 
 
