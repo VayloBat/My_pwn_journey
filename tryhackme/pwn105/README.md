@@ -44,7 +44,7 @@ Input validation isn't just about checking if a number is positive or negative; 
 
 ### Exploit
 
-Check out the full exploit script here: \[exploitpwn105.py](./exploitpwn105.py)
+Check out the full exploit script here: [exploitpwn105.py](./exploitpwn105.py)
 
 
 
@@ -54,7 +54,8 @@ Check out the full exploit script here: \[exploitpwn105.py](./exploitpwn105.py)
 
 ### Result
 
-!\[PoC](./screenshotpwn105.jpg)
+![PoC](./screenshotpwn105.jpg)
+
 
 
 
