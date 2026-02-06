@@ -1,10 +1,15 @@
 # PicoCTF input_injection_1 Write-up
 
-### Summary
+### Summary :
 
-### The attack
 
-### Exploit
- [exploit.py](./exploit.py)
-### Result
-![screenshote.jpg](./screenshote.jpg)
+
+### The attack :
+
+
+
+
+### Exploit :
+My exploit: [exploit.py](./exploit.py)
+### Result :
+The result : ![screenshote.jpg](./screenshote.jpg)
