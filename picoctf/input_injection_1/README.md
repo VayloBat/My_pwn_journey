@@ -1,13 +1,16 @@
-# PicoCTF input_injection_1 Write-up
+# PicoCTF: input_injection_1 Write-up
 
-### Summary :
-I started by looking over the code and found that it has a **stack-based buffer overflow** vulnerability because `strcpy` is being handled poorly.
-And what I found was that The `fun` function defines two small buffers on the stack, `buffer` and `c`, both limited to just **10 bytes**. buffer is meant for the username, while c holds the uname command.
-The exploit works like this: The code uses strcpy(buffer, name) to copy data from a 200-byte array into the 10-byte buffer. Since strcpy doesn't perform any bounds checking, the extra data overflows its allocated space.
-The "Deep Dive" Version (More descriptive)
+### The Discovery
+When I first looked at the source code, I spotted a classic **stack-based buffer overflow**. The vulnerability sits right inside the `fun` function. 
 
-### The attack :
-The goal is to overwrite the `uname` command in memory with `cat flag.txt` by overflowing the first buffer.
+The program sets up two small buffers on the stack: `buffer` (for the name) and `c` (for the command). Both are limited to only **10 bytes**. The problem is that the code uses `strcpy` to move data into them. Since `strcpy` doesn't check if the input actually fits, we can easily overflow `buffer` and start writing into the memory space of `c`.
+
+### The Attack Plan
+My goal was simple: **Overwrite the `uname` command in memory.**
+By sending more than 10 bytes of data, I can "spill over" from the first buffer into the second one. If I time it right, I can replace the default `uname` command with `cat flag.txt`.
+
+**Memory Visual:**
+`[ 10 bytes of Junk ] + [ My Command (cat flag.txt) ]`
 
 ### Exploit :
 My exploit: [exploit.py](./exploit.py)
