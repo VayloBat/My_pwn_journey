@@ -13,6 +13,6 @@ By sending more than 10 bytes of data, I can "spill over" from the first buffer 
 `[ 10 bytes of Junk ] + [ My Command (cat flag.txt) ]`
 
 ### Exploit :
-: [exploit.py](./exploit.py)
+so the exploit lives in its own file. Check it out here: [exploit.py](./exploit.py)
 ### Result :
- : ![screenshote.jpg](./screenshote.jpg)
+  ![screenshote.jpg](./screenshote.jpg)
