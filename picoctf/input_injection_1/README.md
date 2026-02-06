@@ -1,5 +1,9 @@
-# picoCTF input_injection_1
+# PicoCTF input_injection_1
 
-### summary
+### Summary
 
-### attack
+### The attack
+
+### Exploit
+
+### Result
