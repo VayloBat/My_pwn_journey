@@ -7,7 +7,7 @@ The exploit works like this: The code uses strcpy(buffer, name) to copy data fro
 The "Deep Dive" Version (More descriptive)
 
 ### The attack :
-The goal is to overwrite the uname command in memory with cat flag.txt by overflowing the first buffer.
+The goal is to overwrite the `uname` command in memory with `cat flag.txt` by overflowing the first buffer.
 
 ### Exploit :
 My exploit: [exploit.py](./exploit.py)
